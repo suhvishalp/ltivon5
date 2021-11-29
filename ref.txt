@@ -1,0 +1,147 @@
+
+Environment-setup 
+--------------------
+    1. java 11 
+        > java -version 
+
+    2. eclipse or STS 
+
+    3. mysql community server & mysql workbench 
+
+    4. docker 
+        > docker --version 
+
+    5. nodejs
+        > node -v 
+        > npm -v 
+
+    6. mongodb community edition 
+            -> create below folders in C: 
+                    c:\data\db 
+            -> set env variable for mongodb 
+
+            > mongod 
+
+
+    Spring 
+        - core, mvc, rest, data, cloud, security, boot 
+        
+    Microservices 
+        - config server, service discovery/registry / naming server, api gateway, load balancing, 
+                - service to service communication 
+
+    Cloud / DevOps / docker 
+        - AWS EC2, deploy java application 
+        - CI / CD 
+        - automate deployment 
+        - version controlled 
+
+    FrontEnd    
+        - angular, react 
+
+
+
+    Session1        - raise new topics, discussions, demontrations 
+
+    Session2       - demontrations 
+
+    session3        - self study / recall the topics / read / explore / learn from other resources 
+
+    Session4        - practicals / hands-on / solve assignments / ask questions 
+
+
+
+
+    Language                        library                         framework 
+
+    Java                            standard libraries              spring 
+                                    i.e. util, io, jdbc, etc.
+                                    3rd party libraries 
+
+    
+    JavaScript                      jquery                          angular 
+
+    Python                          ---                             ?
+
+    C#/VB                           ----                            .net framework 
+
+    Go                              -----                           ?
+
+       |                            |                               |
+    programming                 simplifies the tasks            standardize the process 
+    capabilities 
+
+
+    Spring
+    -------------
+        - what is spring framework ? 
+            - application framework 
+
+            - core, mvc, org, data etc. 
+
+
+        - lightweight and loosely coupled?
+
+        - spring modules / products ?
+
+                - core 
+                    - beans, core, context, spEL
+                - web 
+                    - web, servlet, websocket, porlet
+
+                - data access / integration 
+                    - jdbc, orm, oxm, jms, transactions
+
+                - aop 
+
+                - messaging  
+
+                - test
+
+
+        - IOC ? inversion of control
+            -  it is principle that delegates the responsibility of
+                 managing objects (?) or portions of programs to a "Container"
+
+        - container ?
+            - it is responsible to manage the life cycle of objects 
+            - spring framework provides an interface called "ApplicationContext" which represents the IOC container 
+                - there are many implementations of ApplicationContext 
+                            - ClassPathXmlApplicationContext 
+                            - FileSystemXmlApplicationContext  
+                            - AnnotationConfigApplicationContext
+                            - AnnotationConfigWebApplicationContext
+
+
+        - spring beans ?
+            - objects which are managed by the container 
+
+        - ways to define beans in spring ? 
+
+                1. using xml 
+
+                        <bean id="" class="" .... .. .. ... ... />
+
+                        <bean id="" class="">  
+                            <property name=""><value>xxxx</value></property>
+                            <property name="" value="" />
+                        </bean> 
+
+                        <bean id="" class="">  
+                            <constructor-arg name="" value="" />
+                        </bean> 
+
+                        new ClassPathXmlApplicationContext("spring-beans.xml")
+
+                2. using java 
+
+                        @Configuration 
+                        public class MyConfiguration {
+
+                                @Bean 
+                                public Employee createEmp(){
+                                    //...
+                                }
+                        }
+
+                3. annotation based configuration 
