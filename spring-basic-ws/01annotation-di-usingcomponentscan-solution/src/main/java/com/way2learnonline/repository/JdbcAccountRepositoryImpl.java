@@ -22,8 +22,7 @@ import com.way2learnonline.model.*;
 	
 		@Autowired
 		private DataSource dataSource;
-	
-	
+
 		
 		@PostConstruct
 		public void populateCache(){

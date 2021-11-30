@@ -85,7 +85,10 @@ Environment-setup
         - spring modules / products ?
 
                 - core 
+                    - has thee implementation of IOC and supports dependency injection 
+                    - responsible for maintaining object's life cycle 
                     - beans, core, context, spEL
+
                 - web 
                     - web, servlet, websocket, porlet
 
@@ -145,3 +148,53 @@ Environment-setup
                         }
 
                 3. annotation based configuration 
+
+        Life Cycle methods
+        ---------------------
+
+                public void init() 
+                    - write any initilization code i.e. loading some config, connecting to db, validation
+
+                pbulic void destroy()
+                        - write cleanup code 
+
+
+                1. using xml 
+                    <bean id="employee" class="demo1.Employee" init-method="init" destroy-method="destroy">
+                        <property name="name" value="vishaal"/>
+                    </bean>
+
+
+                2. using java 
+                    public class Employee implements InitializingBean, DisposableBean {
+
+                            	public void afterPropertiesSet() throws Exception {
+                                    // TODO Auto-generated method stub
+                                    System.out.println("this is the place for initilization/validation/etc");
+                                }
+
+                                public void destroy() throws Exception {
+                                    // TODO Auto-generated method stub
+                                    System.out.println("releasing resources using destroy method ");
+                                } 
+                    }
+
+                3. using annotation 
+
+
+
+        Dependency Check 
+
+        Bean Scopes 
+            - using xml 
+            - using @Scope 
+
+        constructor injection 
+
+        setter injection 
+
+        @Value 
+
+        auto wiring 
+
+        @Qualifier 
