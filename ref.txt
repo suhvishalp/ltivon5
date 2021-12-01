@@ -198,3 +198,162 @@ Environment-setup
         auto wiring 
 
         @Qualifier 
+
+
+
+
+        JDBC 
+        -----------
+            - robust, low level api
+            - it takes several lines of code just to bind an object to sql query 
+            - sql is not java / object oriented 
+            - sql is not very easy to refactor 
+            - hard to read / maintain 
+
+            - in java, we deal with objects i.e. employee, book, product 
+
+
+
+        ORM Frameworks
+        -----------------
+            - map java objects to relational tables 
+
+                 Hibernate 
+                 TopLink 
+                 IBatis 
+        JPA 
+        ------------
+            - java persistence api 
+            - specifies standards for mapping objects to relational databases 
+            - bridges gap between objects and rdbms 
+            - relational mapping is made through metadata
+            - it has an EntityManager api to perform db related operations 
+            - JPA also specifies JPQL to retrieve data 
+            - IT also has transaction mechanism 
+
+
+        JPA Providers 
+        ---------------
+            - Hibernate JPA 
+                - ORM framwork which implements JPA standards 
+
+            - EclipseLink
+            - MyBatis 
+
+
+
+        JPA BASICS 
+        --------------
+
+            Entity
+            ---------
+                -  objects managed by EntityManager
+                - when talking about mapping objects to a relational database, persisting objects, retrieving objects, 
+                        the term 'Entity' is used 
+                - Entities are mapped with relational tables 
+
+                @Entity
+                public class Employee {
+                    
+                    @Id 
+                    private int id; 
+
+                    public Employee(){
+
+                    }
+
+                    //getter/setter methods 
+                }
+
+
+            EntityManager 
+            -----------
+                - EntityManager is responsible to persist data in to the db 
+                - it manages the state and lifecycle of entities, using JPQL it retrieves the entities 
+
+
+            Persistentce Context 
+            ----------------------
+                - configuration for set of managed entities 
+
+                - persistence.xml 
+                    <persistence>
+                            <persistence-unit name="pu1">
+
+                            </persistence-unit>
+
+                    </persistence>
+
+            - persistent unit standard properites 
+            -----------------------------------------
+
+            <properties>
+				<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/mydb"/>
+				<property name="javax.persistence.jdbc.user" value="root"/>
+				<property name="javax.persistence.jdbc.password" value="suhroot123"/>
+			</properties>
+
+
+            CRUD 
+
+            Default Mapping 
+
+            Custom Mapping 
+
+            Relationals / Inheritance 
+
+            Query / Retrieve data 
+
+
+
+
+        Spring Data JPA 
+        -----------------
+            - wrapper around jpa & jpa providers
+            - offers easy integration with db and provides boilerplate code 
+
+                - Spring Data JPA offers repository pattern
+                - supports pagination, dynamic query execution, validation etc.  
+
+                - transactions 
+
+                - caching 
+
+
+            - QueryDSL
+
+
+
+
+
+
+            class EmployeeDAO {
+
+                    private EntityManager manager;
+
+                    EmployeeDAO(){
+                        //create object of EntityManager
+                    }
+
+                    public Employee save(Employee emp){
+                        //start tx 
+                        manager.persist(emp);
+                        //commit x
+                    }
+
+                    //..
+            }
+
+
+
+
+
+            with spring data jpa all you need to do is.. create a repository like below...
+
+            interface EmployeeRepository extends JpaRepository<Employee, Integer>{
+
+            }
+
+            - spring data jpa will automatically provide a "proxy instance" implementing the 
+                above interface 
