@@ -9,8 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.way2learnonline.config.ApplicationConfig;
-import com.way2learnonline.config.InfrastructureConfig;
+
 import com.way2learnonline.service.BankService;
 
 
@@ -24,9 +23,9 @@ public class BankServiceTests {
 	@Before
 	public void init() throws Exception{
 		
-		 context= new AnnotationConfigApplicationContext(ApplicationConfig.class,InfrastructureConfig.class);		
-		 
-		 		bankService=context.getBean("bankService",BankService.class);
+//		 context= new AnnotationConfigApplicationContext(ApplicationConfig.class,InfrastructureConfig.class);		
+//		 
+//		 		bankService=context.getBean("bankService",BankService.class);
 		
 	}	
 
