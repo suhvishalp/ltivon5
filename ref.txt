@@ -329,6 +329,9 @@ Environment-setup
                         for each entity in our app and those auto generated classes will be stored 
                         in a directory "target/generated-sources"
 
+                        "The JPAAnnotationProcessor will find domain types annotated with javax.persistence.Entity annotation and generates query types for them"
+                        
+
 
 
         Spring Data JPA 
@@ -357,6 +360,25 @@ Environment-setup
                         |--> .....
                         |
                         |
+                interface PagingAndSortingRepository<T, ID>
+                        |
+                        |
+                        |-->Page<T>	findAll(Pageable pageable)
+                        |-->Iterable<T>	findAll(Sort sort)
+                        |
+                        |
+                        |
+                interface JpaRepository<T, ID> 
+                        |
+                        |
+                        |
+                        |
+                        
+
+
+                **Pageable 
+                        
+
 
 
 
@@ -423,3 +445,26 @@ Environment-setup
 
             - spring data jpa will automatically provide a "proxy instance" implementing the 
                 above interface 
+
+
+
+        Relationships  / Association 
+        -----------------
+
+
+                @OneToOne                   <<--join column  
+                @ManyToOne                  <<--join column      
+
+                @OneToMany                   <<-Join table 
+                @ManyToMany                  <<-Join table 
+
+
+            1. identify and configure the association between two entities using appropriate annotations  
+                    - consider / determine the direction & cartidinality 
+
+
+            2. understand / observe how these association are represented in database 
+
+            3. define appropriate casecase event and fetch policy when the entities are associated with each other 
+
+            4. perform db operations 
