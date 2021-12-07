@@ -16,7 +16,7 @@ public class BankServiceImpl implements BankService {
 	@Autowired private AccountService accountService;
 	
 
-
+	@Transactional
 	public Long transfer(Long fromAccountNumber, Long toAccountNumber, int amount) throws SQLException {
 				Long transactionId= accountService.debit(amount,fromAccountNumber);
 						accountService.credit(amount, toAccountNumber);

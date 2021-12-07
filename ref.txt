@@ -455,16 +455,68 @@ Environment-setup
                 @OneToOne                   <<--join column  
                 @ManyToOne                  <<--join column      
 
-                @OneToMany                   <<-Join table 
-                @ManyToMany                  <<-Join table 
+                @OneToMany                   <<-Join table              LAZY
+                @ManyToMany                  <<-Join table              LAZY
 
 
             1. identify and configure the association between two entities using appropriate annotations  
                     - consider / determine the direction & cartidinality 
-
+S
 
             2. understand / observe how these association are represented in database 
 
             3. define appropriate casecase event and fetch policy when the entities are associated with each other 
 
+                    cascade events 
+                            PERSIST 
+                            REMOVE 
+                            MERGE 
+                            DETACH
+                            ALL 
+S
+                    fetch policies 
+                        EAGER 
+                        LAZY 
+
+
+
             4. perform db operations 
+
+
+
+
+
+            @OneToMany 
+            -----------------
+
+                    class Customer {                        class Address {
+
+                        int id;                                 int id;
+                        string name;                            string street, 
+                        int age;                                string city 
+
+                        @OneToMany                              @ManyToOne
+                        Set<Address> addresses;                 Customer customer;
+                    }                                       }
+
+
+                    customer                                address
+                    -------------                           ---------------                     (FK)
+                    id   name   age                         id      street      city        customer_id
+                    1    sss    33                          101     sldkfj      lsdkfjds    1
+                                                            102     sldfkjsdlkj sldfs       1
+
+                    customer_address
+                    --------------------
+                    customer_id         address_id
+                    1                   101 
+                    1                   102
+
+
+
+            EHCache 
+            ==========
+                - caching framework for java 
+                - cache provider 
+                - supports in memory cache or disk based cache 
+                - configure timeout, TTL
