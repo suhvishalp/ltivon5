@@ -1,11 +1,16 @@
 package com.demo.controllers;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.demo.entities.Employee;
 import com.demo.exceptions.EmployeeNotFoundException;
 import com.demo.exceptions.ErrorMessage;
+import com.demo.exceptions.FieldErrorMessage;
 import com.demo.services.EmployeeService;
 
 @RestController
@@ -50,7 +56,7 @@ public class EmployeeController {
 	
 	
 	@PostMapping("/api/employees")
-	public ResponseEntity<Employee> saveEmp(@RequestBody() Employee emp) {
+	public ResponseEntity<Employee> saveEmp(@Valid @RequestBody() Employee emp) {
 		
 		Employee e = empService.save(emp);
 		
@@ -68,6 +74,28 @@ public class EmployeeController {
 		return new ResponseEntity<Employee>(e, HttpStatus.CREATED);
 		 
 	}
+	
+	
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public ResponseEntity<List<FieldErrorMessage>> requestBodyValidationExceptionHandler(MethodArgumentNotValidException ex){
+		
+		
+		List<FieldError> list =  ex.getFieldErrors();
+		
+		List<FieldErrorMessage> errorList = new ArrayList<>();
+		
+		for(FieldError error : list) {
+			errorList.add(new FieldErrorMessage(error.getField(), error.getDefaultMessage()));
+		}
+		
+		return new ResponseEntity<List<FieldErrorMessage>>(errorList, HttpStatus.BAD_REQUEST);
+	}
+	
+	
+	
+	
+	
+	
 	
 	@PutMapping("/api/employees/{empid}")
 	public Employee updateEmp(@RequestBody() Employee emp, @PathVariable("empid")  Long id) {
