@@ -520,3 +520,43 @@ S
                 - cache provider 
                 - supports in memory cache or disk based cache 
                 - configure timeout, TTL
+
+
+
+    Web Services 
+    ---------------
+        - a service which is delivered on the web is called as 'Service' 
+        - designed for machine to machine (or app to app ) interaction 
+        - should be interoperable - not platform dependent 
+        - should allow communication on the network 
+        - data exchange between applications 
+
+
+                        req
+        ApplicationA --------------> Web Service 
+                     <----------------
+                            res 
+    Terminologies 
+    -----------------
+        - Request and Response 
+            - types of HTTP requests 
+            - structure of REquest 
+
+        - Message exchange format 
+            - xml, json, text 
+    
+        - Service provider or server 
+
+        - Service Consumer or client 
+
+        - Service definition 
+
+        - Transport 
+            - HTTP
+            - MQ 
+
+        - SOAP (Simple object access protocol) services and REST (represetational state transfer ) Services 
+
+
+        RESTFul Web Services 
+        ----------------------
