@@ -560,3 +560,46 @@ S
 
         RESTFul Web Services 
         ----------------------
+
+
+        Monolith 
+        -----------
+
+        Microservices 
+        ---------------
+            - architectural style / approach for developing application 
+            - many small services that work together 
+            - services may be written in any programming language i.e .java, python, javascript, ruby etc. 
+
+        Spring Cloud 
+        --------------
+            - spring cloud config server 
+            - spring cloud eureka 
+            - spring cloud api server 
+            - ..
+            - ..
+
+
+        Docker 
+        ----------
+            - tool for containerization 
+
+        Docker image 
+            - self executable package that contains your application code, runtime, libraries etc. 
+
+        container repository 
+            - docker hub <<--- public registry 
+            - private registry 
+                - private git 
+                - AWS - ECR 
+                - GCP - container registry 
+                - Azure - ? 
+
+        Container 
+            - it is an instance of a docker image 
+            - when you run a docker image it is called container 
+
+        Kubernetes 
+
+        Fully Managed Kubernetes services 
+            i.e. AWS = ECS / EKS, GCP = GKE, Azure = AKE 

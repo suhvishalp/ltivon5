@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.6.1</version>
+		<version>2.4.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.demo</groupId>
@@ -67,6 +67,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				
+				<configuration>
+					<image>
+						<name>myrepo/my-spring-rest-app1</name>
+					</image>	
+					<mainClass>com.demo.SpringRestDemo1Application</mainClass>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
