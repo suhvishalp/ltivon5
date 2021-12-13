@@ -603,3 +603,66 @@ S
 
         Fully Managed Kubernetes services 
             i.e. AWS = ECS / EKS, GCP = GKE, Azure = AKE 
+
+
+        Cloud Computing 
+        --------------------
+            - AWS, GCP, Azure, etc offer IT Services related to compute, storage, database, networking, security etc. 
+
+        AWS Console account (free tier)
+
+        AWS EC2 
+            - Elastic Compute Cloud 
+            1. choose AMI - amazon machine image        
+            2. Choose Instance Type - combination of vCPU and RAM
+            3. Configure Instance - specify number of instances, vpc, subnet, userdata scripts, etc.
+            4. Add Storage
+            5. Add Tags
+            6. Configure Security Group - specify firewall rules to allow communication on certain port from certain source 
+
+
+
+        - Connect to the VM / EC2 instance and install java runtime         
+
+            > sudo su 
+            > yum update -y 
+            > amazon-linux-extras install java-openjdk11 -y
+            > amazon-linux-extras install tomcat8.5 -y
+
+            > cd /usr/share/tomcat/webapps
+            > mkdir ROOT
+            > cd ROOT/
+            > echo "Helloworld..this is test" > index.html
+
+
+
+           > service tomcat status
+           > service tomcat start
+           > service tomcat stop 
+
+
+        AWS Code Commit 
+
+        AWS Code Build 
+
+        AWS Code Deploy 
+        -----------------
+            1. create a role for code deploy service to allow few operations on our befalf 
+
+            2. create a role for EC2 instance allowing operations on S3 bucket  
+                    -- attach this role to EC2 instance while launching or if already exist 
+
+            3. Ensure below things are installed in your  EC2 Instance 
+                    - jre11 
+                    - tomcat
+                    - codedeploy-agent
+
+            https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
+            wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+
+
+
+
+        AWS Code Pipeline 
+
+        https://656432174106.signin.aws.amazon.com/console
