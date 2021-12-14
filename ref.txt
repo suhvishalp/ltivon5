@@ -660,9 +660,36 @@ S
             https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-linux.html
             wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
 
+            4. create appspec.yml file and define all the instructions for deployment 
 
 
 
         AWS Code Pipeline 
 
         https://656432174106.signin.aws.amazon.com/console
+
+
+
+
+
+    Microservices 
+    ----------------
+
+        1. Configuration Management -- Spring Cloud Config server 
+                --- configure a centralized place for storing configuration for diff environments of all the services 
+                --- create a config server backed up by git / vault / azure key vault / etc. 
+
+        2. Visibility / Dynamic Scaling / Load balancing  
+                --- Spring cloud netflex eureka 
+                        -- create naming server 
+                        -- service discovery and registry 
+
+                --- Ribbon
+                        -- load balacning 
+
+                --- OpenFeign
+                        -- REST client
+                        -- Servce to service communication 
+
+                -- Spring Cloud Gateway
+                        -- implement authentication / authorization 
