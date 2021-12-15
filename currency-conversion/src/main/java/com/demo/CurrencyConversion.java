@@ -8,6 +8,7 @@ public class CurrencyConversion {
 	private double exchangeRate;
 	private int quantity;
 	private double totalAmount;
+	private String port;
 	
 	public CurrencyConversion() {
 		super();
@@ -59,6 +60,14 @@ public class CurrencyConversion {
 
 	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
 	}
 	
 	

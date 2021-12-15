@@ -41,7 +41,7 @@ public class CurrencyConversionController {
 		cc.setExchangeRate(rate);
 		double amount = quantity * rate;
 		cc.setTotalAmount(amount);
-		
+		cc.setPort(ce.getPort());
 		return cc;
 		
 	}
