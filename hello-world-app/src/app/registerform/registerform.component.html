@@ -1,0 +1,30 @@
+<div>
+    <h1>Register Form</h1>
+
+    <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" 
+              class="form-control" 
+              formControlName="email"
+              id="email" aria-describedby="emailHelp">
+
+          <div *ngIf="emailControl && emailControl.touched && !emailControl.valid">
+              <div *ngIf="emailControl.errors?.['required']" class="alert alert-danger">Email cannot be blank</div>
+              <div *ngIf="emailControl.errors?.['minlength']"a class="alert alert-danger">at least 5 characters required</div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password"  formControlName="password" class="form-control" id="password">
+        </div>
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" id="name">
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+</div>

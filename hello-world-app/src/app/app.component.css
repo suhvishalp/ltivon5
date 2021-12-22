@@ -1,0 +1,17 @@
+.my-header{
+    background-color: lightcoral;
+    height: 200px;
+    padding:20px;
+}
+
+.my-navbar{
+    background-color: lightseagreen;
+    height: 900px;
+    padding:10px;
+}
+
+.my-course-list{
+    background-color: lightgrey;
+    height: 900px;
+    padding: 10px;
+}

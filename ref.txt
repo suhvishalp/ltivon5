@@ -693,3 +693,334 @@ S
 
                 -- Spring Cloud Gateway
                         -- implement authentication / authorization 
+
+
+
+
+
+
+            REST API application 
+            ---------------------
+                - Spring Boot  + Spring REST 
+
+
+            Amazon API Gateway Service 
+            --------------------------
+                - used to create a REST API 
+                - Using API Gateway, you can create RESTful APIs and WebSocket APIs 
+
+            API Gateway 
+            ------------
+
+
+
+            http://localhost:8081/limits
+
+
+            http:localhost:8765/LIMITS-SERVICE/limits
+
+            http://localhost:8765/CURRENCY-CONVERSION//currency-conversion/USD/INR/2000
+
+
+
+
+FrontEnd / Web development / UI 
+----------------------------------------
+
+HTML 
+    - 'what' contents you want to place on your webpage 
+    - define the structure of webpage 
+
+CSS 
+    - 'how' content should appear on webpage 
+    - define style rules 
+
+JavaScript / ES5
+    - scripting language for browsers 
+    - js code runs only in browsers (** JS code can also be executed outside the browsers using nodejs )
+    - every browser has a js engine which is responsible to execute the js code 
+
+                chrome      = v8 
+                firefox     = spidermonkey 
+                IE          = chakra 
+
+    - 1997, JS introduced 
+    - 1997, it was submitted to ECMA for standardization 
+        - since then ECMA kept publish various specifications / standards 
+        - these specifications has to be implemented by all the browsers 
+        - the implementation of these specifications is called 'ECMAScript'
+
+    - 1997      = es1 
+    - 1998      = es2 
+    - 1999      = es3 
+    - 2009      = es5
+    - 2015      = es6           <<-- introducted lot of new features
+    - 2017 
+    - 2018
+    - 2019
+    - 2021      = ES12
+
+    - use js for...
+        - business logic 
+        - handle event 
+        - ajax calls / http calls 
+        - DOM / CSS manipulation
+        - form validations 
+        - etc.
+
+ES6 / ECMAScript 
+------------------
+    - standard / specification  for javascript / modern javascript 
+
+    - arrow functions 
+    - es6 module system 
+    - spread operators 
+    - object destructuring 
+    - promises, async, await 
+    - generators
+    - proxies 
+    - Set, WeakSet, Map, WeakMap
+    - ....
+
+Javascript tools 
+-----------------   
+    - bundlers      
+        - i.e. Webpack 
+        - combine or group several files together 
+
+    - transpilers 
+        - i.e. Babel 
+        - convert the modern js code into legacy js 
+
+JQuery 
+    - it is a js library, open source / light weight / cross - browser 
+
+Bootstrap / SemanticUI
+    - CSS framework / CSS library 
+    - used to create responsibe web pages 
+
+
+TypeScript 
+------------
+    - it is compiled language 
+    - the ts code is compiled into js code 
+    - it is a superset of javascript, additionally offers few features i.e. type system, decorators etc. 
+    - OOPs 
+
+
+
+    function arithAdd(a, b){
+        return a + b;
+    }
+
+    arithAdd();
+    arithAdd('one', 'two')
+
+
+
+Angular 
+----------
+    - MVC Based framework to build front end application 
+    - it is based on typescript 
+
+
+Environment setup 
+---------------------
+    1. nodejs 
+    2. angular-cli 
+            - it is a command line tool to create angular projects, build, deploy etc.
+            
+            > npm install -g @angular/cli 
+
+    3. code editor 
+        - vs code / atom / brackets etc. 
+
+
+create a hello world angular project 
+-----------------------------------
+            > ng new hello-world 
+
+
+
+
+directory structure of angular project 
+-------------------------------------
+
+    hello-world-app 
+    ---------------
+        |
+        |--> node_modules
+        |     |->it stores all the libraries/packages downloaded
+        |
+        |
+        |--> src
+        |     |
+        |     |--> app
+        |     |     |
+        |     |     |-->app.module.ts 
+        |     |     |   |-> root module of your application
+        |     |     |
+        |     |     |-->app.component.ts 
+        |     |     |   --> defines application's Root Component
+        |     |     |-->app.component.html 
+        |     |          --> template for root component 
+        |     |--> assets
+        |     |     |- used to store all the static files i.e. images, pdf, audio etc.
+        |     |
+        |     |--> environments
+        |     |     |- env specific properties 
+        |     |
+        |     |
+        |     |--> index.html
+        |     |
+        |     |--> main.ts
+        |     |     --> entry point of angular applications 
+        |     |
+        |     |--> styles.css
+        |     |     --> global CSS file 
+        |     |
+        |
+        |
+        |
+        |
+        |
+        |--> angular.json
+        |       |-> specifies angular related configuration
+        |
+        |
+        |--> tsconfig.json
+        |       |-> specifies configuration related to typescript
+        |
+        |--> package.json
+        |       |-> lists all the dependencies, configure some scripts, store metadata etc.
+        |
+        |
+
+
+
+
+Angular Building blocks 
+------------------------
+    1. Component 
+            - a component is responsible to render a patch / part on a webpage 
+            - a component encapsulates data, logic and view together 
+
+            - a component in angular, is a typescript class, which renders a template 
+
+
+            header.component.ts 
+            -------------------
+
+            import { Component } from '@angualr/core'
+
+            @Component({
+                selector: 'app-header',
+                templateUrl : './header.component.html'
+            })
+            export class HeaderComponent {
+
+                    //data members
+
+                    //logic / methods
+            }
+
+            <app-header></app-header>
+
+    2. template 
+            - it an html file with some view to be rendered 
+            - i.e. header.component.html
+
+
+    3. module 
+            - in every angular project, there must be at least 1 module 
+            - a module is a container which registers/declars all the components, directives, pipes etc.
+
+    4. directives 
+
+
+    5. pipes 
+
+
+    6. Services 
+
+
+
+Data Binding 
+-------------
+
+    1. string interpolation 
+    2. property binding 
+    3. attribute binding 
+    4. style binding 
+    5. class binding 
+    6. event binding 
+
+
+Directives 
+--------------
+
+        - attribute directives 
+
+                [ngClass]
+
+                [ngStyle]
+
+                [ngModel]
+
+        - structural directives 
+
+                *ngIf 
+
+                *ngFor 
+
+        - component directive
+
+
+Custom directives
+-------------------
+
+        <h1 highlight> Some Text </h1>
+
+
+
+        @Directive({
+            selector : '[highlight]'
+        })
+        class MyCustomDirective{
+
+            constructor(public eleRef:ElementRef){
+
+                    
+
+            }
+
+        }
+
+
+Form handling 
+----------------
+
+    -FormsModule and ReactiveFormsModule provide directives, classes, and objects to handle forms 
+
+    -there are two diff approaches to work with forms 
+
+    - FormGroup 
+        - used to track value and validation status of a group of formcontrol objects 
+
+    - FormControl 
+        - track value and validation status of an individual form element i.e. text, radio, check etc.
+    - 
+
+
+        1. template driven forms 
+                - the formgroup, formcontrol, etc objects are created implicitely 
+                        just by adding few directives in template 
+
+        2. reactive forms 
+
+
+React 
+
+VueJS
+
+EmberJS

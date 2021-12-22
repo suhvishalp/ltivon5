@@ -1,0 +1,42 @@
+<div>
+    <h1>Login Form</h1>
+
+
+    <h1 #someVar>sfds</h1>
+
+    <form #loginForm="ngForm"  (ngSubmit)="handleSubmit(loginForm)">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input 
+              type="email" 
+              class="form-control" 
+              id="username" 
+              ngModel
+              name="username"
+              #uname="ngModel"
+              required
+              minlength="5"
+              aria-describedby="emailHelp">
+
+          <div *ngIf="uname.touched && !uname.valid">
+              <div *ngIf="uname.errors?.['required']"  class="alert alert-danger">username cannot be empty</div>
+              <div *ngIf="uname.errors?.['minlength']"  class="alert alert-danger">username must be at least 5 characteres</div>
+
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input 
+              type="password" 
+              class="form-control"
+              ngModel
+              name="password"
+              required
+               id="password">
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Login</button>
+      </form>
+
+</div>
