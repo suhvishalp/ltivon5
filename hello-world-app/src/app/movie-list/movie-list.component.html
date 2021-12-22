@@ -1,0 +1,28 @@
+<div>
+    <h1>Movies...</h1>
+
+    <div *ngIf="movieList.length > 0">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Stock</th>
+                    <th>Rate</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let movie of movieList">
+                    <td>{{ movie.title }}</td>
+                    <td>{{ movie.genre.name }}</td>
+                    <td>{{ movie.numberInStock }}</td>
+                    <td>{{ movie.dailyRentalRate }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

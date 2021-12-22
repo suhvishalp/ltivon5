@@ -9,6 +9,8 @@ import { HighlightDirective } from './mydirectives/highlight.directive';
 import { LoginformComponent } from './loginform/loginform.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterformComponent } from './registerform/registerform.component';
+import { MovieListComponent } from './movie-list/movie-list.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { RegisterformComponent } from './registerform/registerform.component';
     CourseListComponent,
     HighlightDirective,
     LoginformComponent,
-    RegisterformComponent
+    RegisterformComponent,
+    MovieListComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

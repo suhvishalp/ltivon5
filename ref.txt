@@ -1014,9 +1014,31 @@ Form handling
 
         1. template driven forms 
                 - the formgroup, formcontrol, etc objects are created implicitely 
-                        just by adding few directives in template 
+                        just by adding few directives in template
+                - easy to create 
+                - create simple forms with basic validations  
 
         2. reactive forms 
+                - the formgroup, formcontrol, etc objects are created explicitely in component class 
+                - complex forms, with custom validation, async validation 
+
+
+                ex. 
+                register form 
+                    name    : xxxx
+
+                    username    : xxxx  ---> onblur --> reach out to backend
+
+
+                    password 
+
+
+                new FormControl(formState:any=null, 
+                                    ValidatorFn | ValidatorFn[] )
+
+
+                new FormControl('', Validators.required)
+
 
 
 React 
