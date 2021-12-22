@@ -19,7 +19,11 @@
                     <td>{{ movie.genre.name }}</td>
                     <td>{{ movie.numberInStock }}</td>
                     <td>{{ movie.dailyRentalRate }}</td>
-                    <td></td>
+                    <td>
+                        <button (click)="handleDelete(movie._id)" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>

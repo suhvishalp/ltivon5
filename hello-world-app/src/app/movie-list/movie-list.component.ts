@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../myservices/movie.service';
 import { Movie } from '../model/movie.model';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-movie-list',
@@ -28,6 +29,20 @@ export class MovieListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  handleDelete(_id:string){
+    this.movieService.deleteMovie(_id)
+        .subscribe(
+          (response) => {
+            let index = this.movieList.findIndex( m => m._id === _id)
+            this.movieList.splice(index, 1);
+          }, 
+          (error) => {
+            console.log(error)
+            alert('something went wrong')
+          }
+        )
   }
 
 }
