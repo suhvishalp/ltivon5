@@ -11,6 +11,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterformComponent } from './registerform/registerform.component';
 import { MovieListComponent } from './movie-list/movie-list.component';
 import {HttpClientModule} from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes:Routes = [
+  { path : '', component : HomeComponent }, 
+  { path : 'movies', component : MovieListComponent }, 
+  { path : 'login', component : LoginformComponent  }, 
+  { path : 'register', component : RegisterformComponent},
+  { path : 'courses', component : CourseListComponent }
+]
 
 @NgModule({
   declarations: [
@@ -21,13 +31,15 @@ import {HttpClientModule} from '@angular/common/http';
     HighlightDirective,
     LoginformComponent,
     RegisterformComponent,
-    MovieListComponent
+    MovieListComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, 
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule, 
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

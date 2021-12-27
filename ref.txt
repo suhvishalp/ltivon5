@@ -1040,8 +1040,165 @@ Form handling
                 new FormControl('', Validators.required)
 
 
+    HttpClientModule provides a service called 'HttpClient', and required classes to make http calls / ajax calls to backend 
+
+
+    Service 
+    ---------
+        - it is a class where we write our business logic 
+
+            export class MyService{
+
+            }
+
+    Observable
+    ------------
+        - observable is an object, which is used to handle async operations
+            - the observable object emits data if the async operation is successfull, otherwise emit error 
+        - rxjs library offers the concept of observables and various operators 
+
+
+
+Angular 
+---------
+    - MVC framework
+    - separation the user interface (template) and the business logic (component)
+    - angular has built in support for ajax calls / http requests, routing, form handling, animation etc. 
+    - clean, concise code, increased efficiency 
 
 React 
+---------
+    - it is a js library to build UI 
+    - simplicity, faster development, performance 
+    - encapculatee the UI and business logic in a single unit 
+    - appears more opinioted, it supports 3rd party libraries 
+    - jsx and virtual dom
+
+
+
+
+    React library 
+        - used to create component 
+
+
+    React-DOM library 
+        - used to render the components on browser
+
+            ReactDOM.
+
+    Component 
+        - component is responsibe to render a particular part / patch on the webpage 
+        - encapculates the data, view and logic together 
+        - in react, a component is just a javascript function or a class that describes the UI 
+
+            product.js
+            ---------------
+
+            function Product(){
+                return (
+                    //jsx code 
+                    <div class='product'>
+                        <h3>Samsung S10+</h3>
+                        <p> Some description text....</p>
+                        <p> Price : 220000.00</p>
+                        <p> Offer : 20% </p>
+                        <button>Buy Now!</button>
+                    </div>
+                )
+            }
+
+            export default Product;
+
+            anotherfile.js 
+            --------------- 
+                import Product from 'product.js'
+
+
+
+
+            import React, { Component } from 'react'
+
+            class Product extends Component {
+
+                    render(){
+                        //jsx
+                    }
+
+            }
+
+
+
+
+    JSX 
+        - javascript xml 
+        - looks like html, a syntactical sugar for javascript 
+        - used to describe the ui 
+
+            <div> helloworld </div>                 //jsx code 
+
+            React.creatElement('div', null, 'helloworld' )          //javascript code 
+
+
+             <div> 
+                <h1> hello </h1>
+            </div>
+
+
+             React.creatElement('div', null, React.createElement('h1', null, 'hello'));
+
+
+    Babel 
+        - javascript pre-processor 
+        - converts the jsx code into javascript 
+
+
+
+    create-react-app CLI tool 
+
+
+
+    stateless / functional / presentational components 
+    ---------------------------------------------------
+
+        - we cannot have state property to store data 
+                ** with react v16.8, we have state using the concept of hooks 
+
+            function Header(){
+                return (
+                    //jsx code 
+                )
+            }
+
+
+    stateful / class based components
+    ----------------------------------
+
+            - stateful component can have 'state'
+            - 'state' is a special property of a component, used to store data 
+            - if the state changes, the component is automatically re-rendered 
+
+
+        import {Component} from 'react';
+
+        class Header extends Component {
+
+            state = {
+                //store some data 
+            }
+
+            render(){
+                return (
+                    //jsx code 
+                )
+            }
+        }
+
+
+
+
+
+
+
 
 VueJS
 

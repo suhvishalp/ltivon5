@@ -1,0 +1,17 @@
+.my-header{
+    background-color: lightsalmon;
+    height: 150px;
+    padding:20px;
+}
+
+.my-nav{
+    background-color: lightseagreen;
+    padding:20px;
+    height: 800px;
+}
+
+.my-courses{
+    background-color: lightgrey;
+    padding: 20px;
+    height: 800px;
+}
